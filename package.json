@@ -25,6 +25,7 @@
     "prebuild": "rimraf lib",
     "build": "tsc",
     "test": "mocha tests",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   }
 }
