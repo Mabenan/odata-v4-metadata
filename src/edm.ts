@@ -219,7 +219,7 @@ export namespace Edm {
             }
           });
           return key;
-            }
+            }))
         public key: Key;
         
         @parse
