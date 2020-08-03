@@ -209,7 +209,17 @@ export namespace Edm {
             (d, i) =>d.key, 
             (props, i) => props || [],
             (props, i) => props.map(prop => new Key(prop, i)),
-            (props) => props[0]))
+            (props) => {
+          var key = null;
+          props.forEach((key2) => {
+            if(key === null){
+              key = key2;
+            }else{
+              key["propertyRefs"].push(key2.propertyRefs[0]);
+            }
+          });
+          return key;
+            }
         public key: Key;
         
         @parse
